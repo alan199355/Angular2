@@ -3,12 +3,10 @@
 </h1>
 
 
-<div>
-  <label for="">name:</label>{{hero.name}}
-  <input type="" [(ngModel)]="hero.name" placeholder="name" name="" value="">
-</div>
+
 <ul class="heroes">
-  <li *ngFor='let hero of heros' (click)='onSelect(hero)' [class.selected]="hero===selectedHero">
+  <li *ngFor='let hero of heroes' (click)='onSelect(hero)' [class.selected]="hero===selectedHero">
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
+<hero-detail [hero]="selectedHero"></hero-detail>
