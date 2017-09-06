@@ -14,7 +14,7 @@ export class HeroDetailComponent implements OnInit {
     private heroService: HeroService,
     private route: ActivatedRoute,
     private location: Location
-  ){}
+  ) { }
   hero: Hero;
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -25,5 +25,9 @@ export class HeroDetailComponent implements OnInit {
   };
   goBack(): void {
     this.location.back();
+  };
+  save(): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
   }
 }
